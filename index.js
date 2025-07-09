@@ -33,7 +33,6 @@ app.use(cors({
     origin: "https://chatapp-production-da0e.up.railway.app",
     credentials: true
 }));
-
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(cookieParser());
 
