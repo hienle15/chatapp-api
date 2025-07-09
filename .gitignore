@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+package-lock.json
+# dotenv environment variables
+.env
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build artifacts
+dist/
+build/
+coverage/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Frontend specific (if you have a 'dist' or 'build' folder in frontend)
+# Assuming your frontend build output is in 'dist' or 'build'
+frontend/dist/
+frontend/build/
+
+# Other potential temporary files
+*.tmp
+*.bak
