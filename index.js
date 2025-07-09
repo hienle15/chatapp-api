@@ -30,7 +30,7 @@ const corsOption = {
     credentials: true
 };
 app.use(cors({
-    origin: "http://10.10.23.106:5173", // hoặc đúng port frontend của bạn
+    origin: "*", // hoặc đúng port frontend của bạn
     credentials: true // chữ thường, không phải Credential
 }));
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));

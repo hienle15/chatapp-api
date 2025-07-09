@@ -6,7 +6,8 @@ dotenv.config();
 const HOST = process.env.HOST;
 const PORT = process.env.PORT;
 const API_VERSION = process.env.API_VERSION;
-
+// 🛠 Thêm dòng này:
+const isProduction = process.env.NODE_ENV === 'production';
 
 export const swaggerDocument = {
   openapi: "3.0.0",
@@ -17,9 +18,11 @@ export const swaggerDocument = {
   },
   servers: [
     {
-      url: `http://${HOST}:${PORT}${API_VERSION}`,
-      description: "Local development server",
-    },
+      url: isProduction
+        ? `https://chatapp-api-production-bbe2.up.railway.app/api/v1`
+        : `http://localhost:${PORT}${API_VERSION}`,
+      description: isProduction ? "Production server" : "Local development server",
+    }
   ],
   paths: {
     "/users/register": {
@@ -65,7 +68,7 @@ export const swaggerDocument = {
                   // email: { type: "string" },
                   password: { type: "string" },
                 },
-                required: ["name",  "password"]
+                required: ["name", "password"]
               },
             },
           },
