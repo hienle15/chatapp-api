@@ -30,9 +30,10 @@ const corsOption = {
     credentials: true
 };
 app.use(cors({
-    origin: "*", // hoặc đúng port frontend của bạn
-    credentials: true // chữ thường, không phải Credential
+    origin: "https://chatapp-production-da0e.up.railway.app",
+    credentials: true
 }));
+
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(cookieParser());
 

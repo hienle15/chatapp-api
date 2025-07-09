@@ -7,10 +7,14 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: ['*'],
+        origin: ["https://chatapp-production-da0e.up.railway.app"],
         methods: ['GET', 'POST'],
           credentials: true // 
     },
+});
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Credentials", "true");
+  next();
 });
 const userSocketMap = {}; // userId => Set(socketIds)
 export const getReceiverSocketId = (receiverId) => {
