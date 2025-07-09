@@ -13,7 +13,7 @@ import { swaggerDocument } from "./swagger.js";
 import cors from "cors";
 
 // Nhập máy chủ và io từ socket.js
-import { app, io, server } from "../backend/socket/socket.js"; // Nhập chúng ở đây
+import { app, io, server } from "./socket/socket.js";
 
 dotenv.config({});
 
